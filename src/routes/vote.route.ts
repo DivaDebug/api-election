@@ -2,8 +2,8 @@ import {Router} from 'express';
 
 const router = Router();
 
-router.get('/ping', (req, res) => {
-  res.json({success: true});
+router.get('', (req, res) => {
+  res.json({path: '/vote'});
 });
 
 export default router;

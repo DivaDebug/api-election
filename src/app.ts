@@ -1,5 +1,5 @@
 import express from 'express';
-import routes from './routes.js';
+import routes from './routes/index.js';
 import routeNotFoundMiddleware from './middlewares/route-not-found.middleware.js';
 import exceptionHandlerMiddleware from './middlewares/exception-handler.middleware.js';
 
