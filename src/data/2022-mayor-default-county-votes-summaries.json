@@ -1,0 +1,793 @@
+[
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "臺北市",
+    "countyCode": "63000",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "張家豪",
+        "party": "台灣動物保護黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "王文娟",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "鄭匡宇",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 4,
+        "name": "黃聖峰",
+        "party": "台澎黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 5,
+        "name": "童文薰",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 6,
+        "name": "蔣萬安",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 7,
+        "name": "蘇煥智",
+        "party": "台灣維新",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 8,
+        "name": "黃珊珊",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 9,
+        "name": "施奉先",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 10,
+        "name": "唐新民",
+        "party": "共和黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 11,
+        "name": "謝立康",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 12,
+        "name": "陳時中",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "高雄市",
+    "countyCode": "64000",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "鄭宇翔",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "曾尹儷",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "柯志恩",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 4,
+        "name": "陳其邁",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "新北市",
+    "countyCode": "65000",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "林佳龍",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "侯友宜",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "臺中市",
+    "countyCode": "66000",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "陳美妃",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "蔡其昌",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "盧秀燕",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "臺南市",
+    "countyCode": "67000",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "許忠信",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "林義豐",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "謝龍介",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 4,
+        "name": "吳炳輝",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 5,
+        "name": "黃偉哲",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "桃園市",
+    "countyCode": "68000",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "張善政",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "賴香伶",
+        "party": "台灣民眾黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "鄭運鵬",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 4,
+        "name": "鄭寶清",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "連江縣",
+    "countyCode": "09007",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "李問",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "曹爾元",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "王忠銘",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "金門縣",
+    "countyCode": "09020",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "李應文",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "朱紀瑋",
+        "party": "龍黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "林志錦",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 4,
+        "name": "楊鎮浯",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 5,
+        "name": "陳福海",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 6,
+        "name": "洪志恒",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "宜蘭縣",
+    "countyCode": "10002",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "林姿妙",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "朱振東",
+        "party": "天一黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "許鋐哲",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 4,
+        "name": "陳秋境",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 5,
+        "name": "江淵",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 6,
+        "name": "陳琬惠",
+        "party": "台灣民眾黨",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "新竹縣",
+    "countyCode": "10004",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "黃秀龍",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "范振揆",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "周江杰",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 4,
+        "name": "楊文科",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 5,
+        "name": "劉復嵐",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "苗栗縣",
+    "countyCode": "10005",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "鍾東錦",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "謝福弘",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "吳盛聖",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 4,
+        "name": "徐定禎",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 5,
+        "name": "宋國鼎",
+        "party": "時代力量",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "彰化縣",
+    "countyCode": "10007",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "王惠美",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "黃秀芳",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "蕭仁正",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "南投縣",
+    "countyCode": "10008",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "蔡培慧",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "許淑華",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "王永慶",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "雲林縣",
+    "countyCode": "10009",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "張麗善",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "劉建國",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "林佳瑜",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "嘉義縣",
+    "countyCode": "10010",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "王育敏",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "翁章梁",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "屏東縣",
+    "countyCode": "10013",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "詹智鈞",
+        "party": "時代力量",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "蘇清泉",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "周春米",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "臺東縣",
+    "countyCode": "10014",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "陳長宏",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "饒慶鈴",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "劉櫂豪",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "花蓮縣",
+    "countyCode": "10015",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "徐榛蔚",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "黄師鵬",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "谷辣斯．尤達卡 Kolas Yotaka",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "澎湖縣",
+    "countyCode": "10016",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "陳光復",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "賴峰偉",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "葉竹林",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "基隆市",
+    "countyCode": "10017",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "謝國樑",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "陳薇仲",
+        "party": "時代力量",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "蔡適應",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 4,
+        "name": "曾國民",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 5,
+        "name": "黃希賢",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "type": "mayor",
+    "countyName": "新竹市",
+    "countyCode": "10018",
+    "candidates": [
+      {
+        "no": 1,
+        "name": "黃源甫",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 2,
+        "name": "龔偉綸",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 3,
+        "name": "林耕仁",
+        "party": "中國國民黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 4,
+        "name": "李驥羣",
+        "party": "無",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 5,
+        "name": "沈慧虹",
+        "party": "民主進步黨",
+        "votes": 0,
+        "voteShare": 0
+      },
+      {
+        "no": 6,
+        "name": "高虹安",
+        "party": "台灣民眾黨",
+        "votes": 0,
+        "voteShare": 0
+      }
+    ]
+  }
+]
