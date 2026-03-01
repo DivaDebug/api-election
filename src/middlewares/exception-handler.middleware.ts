@@ -51,6 +51,8 @@ const exceptionHandlerMiddleware = (
   if (process.env.NODE_ENV === 'development') {
     console.error(exception);
 
+    message = exception instanceof Error ? exception.message : message;
+
     const stack = exception instanceof Error
       ? parseStackTrace(exception.stack)
       : undefined;
