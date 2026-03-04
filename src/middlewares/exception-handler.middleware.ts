@@ -8,6 +8,16 @@ interface StackFrame {
   column: number;
 }
 
+interface ErrorResponse {
+  meta: {
+    errorCode: string;
+  };
+  error: {
+    message: string;
+    stack?: StackFrame[];
+  };
+}
+
 const parseStackTrace = (stackString: string | undefined): StackFrame[] => {
   if (!stackString) {
     return [];
@@ -38,40 +48,33 @@ const exceptionHandlerMiddleware = (
   req: Request,
   res: Response,
   next: NextFunction,
-) => {
+): Response => {
   let statusCode = 500;
-  let message = 'Internal server error';
+
+  const response: ErrorResponse = {
+    meta: {
+      errorCode: 'INTERNAL_SERVER_ERROR',
+    },
+    error: {
+      message: 'Internal server error',
+    },
+  };
 
   if (exception instanceof HttpException) {
     statusCode = exception.statusCode;
-    message = exception.message;
+    response.error.message = exception.message;
   }
 
-  // 開發模式顯示 stack
   if (process.env.NODE_ENV === 'development') {
     console.error(exception);
 
-    message = exception instanceof Error ? exception.message : message;
-
-    const stack = exception instanceof Error
-      ? parseStackTrace(exception.stack)
-      : undefined;
-
-    return res.status(statusCode).json({
-      success: false,
-      error: {
-        message,
-        stack,
-      },
-    });
+    if (exception instanceof Error) {
+      response.error.message = exception.message;
+      response.error.stack = parseStackTrace(exception.stack);
+    }
   }
 
-  return res.status(statusCode).json({
-    success: false,
-    error: {
-      message,
-    },
-  });
+  return res.status(statusCode).json(response);
 };
 
 export default exceptionHandlerMiddleware;
