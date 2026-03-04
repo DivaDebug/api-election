@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
+import mongoose from 'mongoose';
 import {voteService} from '../services/vote.service.js';
 import {votesSummaryService} from '../services/votes-summary.service.js';
-import mongoose from 'mongoose';
 
 const createVote = async (req: Request, res: Response) => {
   const params = req.body;
@@ -20,13 +20,7 @@ const createVote = async (req: Request, res: Response) => {
     throw error;
   }
 
-  res.json({
-    meta: {
-      success: true,
-      errorCode: null,
-    },
-    data: null,
-  });
+  res.success();
 };
 
 export {
