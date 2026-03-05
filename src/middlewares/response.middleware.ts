@@ -6,7 +6,7 @@ const responseMiddleware = (
   next: NextFunction,
 ): void => {
   res.success = <T = unknown>(
-    data?: T | null,
+    data: T | null = null,
     meta: Record<string, unknown> = {},
     statusCode: number = 200,
   ): Response => {
