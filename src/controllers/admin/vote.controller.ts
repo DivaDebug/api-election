@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
 import mongoose from 'mongoose';
-import {voteService} from '../services/vote.service.js';
-import {votesSummaryService} from '../services/votes-summary.service.js';
+import {voteService} from '../../services/vote.service.js';
+import {votesSummaryService} from '../../services/votes-summary.service.js';
 
 const createVote = async (req: Request, res: Response) => {
   const params = req.body;

@@ -1,8 +1,8 @@
 import {Router} from 'express';
-import adminRoute from './admin/admin.route.js';
+import voteRoute from './vote.route.js';
 
 const router = Router();
 
-router.use('/admin', adminRoute);
+router.use('/votes', voteRoute);
 
 export default router;
