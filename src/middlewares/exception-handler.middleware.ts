@@ -1,5 +1,6 @@
 import {Request, Response, NextFunction} from 'express';
 import {HttpException} from '../exceptions/http.exception.js';
+import {ZodError} from 'zod';
 
 interface StackFrame {
   functionName: string;
@@ -8,12 +9,18 @@ interface StackFrame {
   column: number;
 }
 
+interface ValidationError {
+  field: string;
+  message: string;
+}
+
 interface ErrorResponse {
   meta: {
     errorCode: string;
   };
   error: {
     message: string;
+    errors?: ValidationError[];
     stack?: StackFrame[];
   };
 }
@@ -63,15 +70,25 @@ const exceptionHandlerMiddleware = (
   if (exception instanceof HttpException) {
     statusCode = exception.statusCode;
     response.error.message = exception.message;
+  } else if (exception instanceof ZodError) {
+    statusCode = 400;
+    response.meta.errorCode = 'VALIDATION_ERROR';
+    response.error.message = 'Validation failed';
+    response.error.errors = exception.issues.map((issue) => {
+      return {
+        field: issue.path.join('.'),
+        message: issue.message,
+      };
+    });
+  } else if (exception instanceof Error) {
+    response.error.message = exception.message;
   }
 
-  if (process.env.NODE_ENV === 'development') {
-    console.error(exception);
-
-    if (exception instanceof Error) {
-      response.error.message = exception.message;
-      response.error.stack = parseStackTrace(exception.stack);
-    }
+  if (
+    exception instanceof Error
+    && process.env.NODE_ENV === 'development'
+  ) {
+    response.error.stack = parseStackTrace(exception.stack);
   }
 
   return res.status(statusCode).json(response);
