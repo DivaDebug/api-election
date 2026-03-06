@@ -64,7 +64,7 @@ const TownVotesSummarySchema = new Schema<ITownVotesSummary>(
       ],
     },
     {
-      collection: 'town_votes_summary',
+      collection: 'town_votes_summaries',
       timestamps: true,
     },
   )

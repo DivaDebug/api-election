@@ -59,7 +59,7 @@ const CountyVotesSummarySchema = new Schema<ICountyVotesSummary>(
     ],
   },
   {
-    collection: 'county_votes_summary',
+      collection: 'county_votes_summaries',
     timestamps: true,
   },
 );
