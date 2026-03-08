@@ -12,6 +12,9 @@ interface ICountyVotesSummary {
     votes: number;
     voteShare: number;
   }[];
+  __v?: number;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 const CountyVotesSummarySchema = new Schema<ICountyVotesSummary>(
@@ -59,8 +62,17 @@ const CountyVotesSummarySchema = new Schema<ICountyVotesSummary>(
     ],
   },
   {
-      collection: 'county_votes_summaries',
+    collection: 'county_votes_summaries',
     timestamps: true,
+    toJSON: {
+      transform: (doc, ret) => {
+        delete ret.__v;
+        delete ret.createdAt;
+        delete ret.updatedAt;
+
+        return ret;
+      },
+    },
   },
 );
 

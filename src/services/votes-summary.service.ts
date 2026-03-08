@@ -6,6 +6,28 @@ import {countyVotesSummaryRepository} from '../repositories/county-votes-summary
 import {townVotesSummaryRepository} from '../repositories/town-votes-summary.repository.js';
 import {HttpResourceNotFoundException} from '../exceptions/http-resource-not-found.exception.js';
 
+const getCountyVotesSummaries = async ({
+  year,
+  type,
+  candidateLimit,
+}: {
+  year: number;
+  type: 'mayor';
+  candidateLimit?: number | undefined;
+}): Promise<ICountyVotesSummary[]> => {
+  const countyVotesSummaries = await countyVotesSummaryRepository.find({
+    year,
+    type,
+  });
+
+  if (candidateLimit) {
+    countyVotesSummaries.forEach((countyVotesSummary) => {
+      countyVotesSummary.candidates = countyVotesSummary.candidates.slice(0, candidateLimit);
+    });
+  }
+
+  return countyVotesSummaries.map((doc) => doc.toJSON());
+};
 
 const recalculateCountyVotesSummary = async ({year, type, countyCode}: {
   year: number;
@@ -90,6 +112,7 @@ const recalculateSummary = async ({year, type, countyCode, townCode}: {
 };
 
 export const votesSummaryService = {
+  getCountyVotesSummaries,
   recalculateCountyVotesSummary,
   recalculateTownVotesSummary,
 };

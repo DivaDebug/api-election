@@ -1,4 +1,11 @@
+import {HydratedDocument} from 'mongoose';
 import {ICountyVotesSummary, CountyVotesSummary} from '../models/county-votes-summary.model.js';
+
+const find = async (
+  filter: Partial<ICountyVotesSummary>,
+): Promise<HydratedDocument<ICountyVotesSummary>[]> => {
+  return CountyVotesSummary.find(filter);
+};
 
 const findOneByYearTypeAndCountyCode = async ({year, type, countyCode}: {
   year: number;
@@ -24,6 +31,7 @@ const upsert = async (countyVotesSummary: ICountyVotesSummary) => {
 };
 
 export const countyVotesSummaryRepository = {
+  find,
   findOneByYearTypeAndCountyCode,
   upsert,
 };
