@@ -3,13 +3,14 @@ import {ElectoralDistrict, IElectoralDistrict} from '../models/electoral-distric
 import {electoralDistrictRepository} from '../repositories/electoral-district.repository.js';
 import {voteRepository} from '../repositories/vote.repository.js';
 import {HttpResourceNotFoundException} from '../exceptions/http-resource-not-found.exception.js';
+import CreateVoteDto from '../dto/create-vote.dto.js';
 
-const createVote = async (params: Partial<IVote>): Promise<IVote> => {
+const createVote = async (params: CreateVoteDto): Promise<IVote> => {
   const electoralDistrict: IElectoralDistrict | null = await electoralDistrictRepository.findByTownCodeAndCandidateNo({
-    year: params.electoralDistrict?.year!,
-    type: params.electoralDistrict?.type!,
-    townCode: params.electoralDistrict?.townCode!,
-    candidateNo: params.electoralDistrict?.candidate?.no!,
+    year: params.electoralDistrict.year,
+    type: params.electoralDistrict.type,
+    townCode: params.electoralDistrict.townCode,
+    candidateNo: params.electoralDistrict.candidate.no,
   });
 
   if (!electoralDistrict) {
@@ -18,7 +19,7 @@ const createVote = async (params: Partial<IVote>): Promise<IVote> => {
 
   const vote: IVote = {
     electoralDistrict,
-    votes: params.votes!,
+    votes: params.votes,
   };
 
   return voteRepository.create(vote);
