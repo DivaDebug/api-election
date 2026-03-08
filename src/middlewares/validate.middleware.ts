@@ -1,29 +1,16 @@
 import {Request, Response, NextFunction} from 'express';
-import {ZodType} from 'zod';
-import {ParamsDictionary, Query} from 'express-serve-static-core';
+import {ZodObject} from 'zod';
 
-interface ValidationSchemas {
-  params?: ZodType<ParamsDictionary>;
-  query?: ZodType<Query>;
-  body?: ZodType<unknown>;
-}
-
-const validate = (schemas: ValidationSchemas) => (
+const validate = (schemas: ZodObject) => async (
   req: Request,
   res: Response,
   next: NextFunction,
-): void => {
-  if (schemas.params) {
-    req.params = schemas.params.parse(req.params);
-  }
-
-  if (schemas.query) {
-    req.query = schemas.query.parse(req.query);
-  }
-
-  if (schemas.body) {
-    req.body = schemas.body.parse(req.body);
-  }
+): Promise<void> => {
+  req.validated = await schemas.parseAsync({
+    body: req.body,
+    query: req.query,
+    params: req.params,
+  });
 
   next();
 };
