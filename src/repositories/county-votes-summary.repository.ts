@@ -7,6 +7,10 @@ const find = async (
   return CountyVotesSummary.find(filter);
 };
 
+const findById = async (id: string): Promise<ICountyVotesSummary | null> => {
+  return CountyVotesSummary.findById(id);
+};
+
 const findOneByYearTypeAndCountyCode = async ({year, type, countyCode}: {
   year: number;
   type: string;
@@ -32,6 +36,7 @@ const upsert = async (countyVotesSummary: ICountyVotesSummary) => {
 
 export const countyVotesSummaryRepository = {
   find,
+  findById,
   findOneByYearTypeAndCountyCode,
   upsert,
 };
