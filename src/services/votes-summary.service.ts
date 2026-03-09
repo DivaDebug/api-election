@@ -29,6 +29,28 @@ const getCountyVotesSummaries = async ({
   return countyVotesSummaries.map((doc) => doc.toJSON());
 };
 
+const getTownVotesSummaries = async ({
+  year,
+  type,
+  countyCode,
+  candidateLimit,
+}: {
+  year: number;
+  type: 'mayor';
+  countyCode: string;
+  candidateLimit?: number | undefined;
+}): Promise<ITownVotesSummary[]> => {
+  const townVotesSummaries = await townVotesSummaryRepository.find({year, type, countyCode});
+
+  if (candidateLimit) {
+    townVotesSummaries.forEach(townVotesSummary => {
+      townVotesSummary.candidates = townVotesSummary.candidates.slice(0, candidateLimit);
+    });
+  }
+
+  return townVotesSummaries.map((doc) => doc.toJSON());
+};
+
 const recalculateCountyVotesSummary = async ({year, type, countyCode}: {
   year: number;
   type: string;
@@ -113,6 +135,7 @@ const recalculateSummary = async ({year, type, countyCode, townCode}: {
 
 export const votesSummaryService = {
   getCountyVotesSummaries,
+  getTownVotesSummaries,
   recalculateCountyVotesSummary,
   recalculateTownVotesSummary,
 };

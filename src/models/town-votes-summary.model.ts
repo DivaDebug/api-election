@@ -13,6 +13,9 @@ interface ITownVotesSummary {
     votes: number;
     voteShare: number;
   }[];
+  __v?: number;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 const TownVotesSummarySchema = new Schema<ITownVotesSummary>(
@@ -66,6 +69,15 @@ const TownVotesSummarySchema = new Schema<ITownVotesSummary>(
     {
       collection: 'town_votes_summaries',
       timestamps: true,
+      toJSON: {
+        transform: (doc, ret) => {
+          delete ret.__v;
+          delete ret.createdAt;
+          delete ret.updatedAt;
+
+          return ret;
+        },
+      },
     },
   )
 ;
