@@ -1,0 +1,89 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches:
+      - main
+      - cicd
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: '24'
+  AWS_REGION: ${{ vars.AWS_REGION || 'ap-northeast-1' }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build TypeScript
+        run: npm run build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: arn:aws:iam::104840775722:role/github-actions
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: ecr-login
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build and push Docker image
+        id: build-image
+        env:
+          ECR_REGISTRY: ${{ steps.ecr-login.outputs.registry }}
+          ECR_REPOSITORY: election/api-election
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+          echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.2.5
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME || 'ec2-user' }}
+          key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          port: ${{ secrets.EC2_SSH_PORT || 22 }}
+          script: |
+            set -e
+            export IMAGE="${{ steps.build-image.outputs.image }}"
+            export CONTAINER_NAME="api-election"
+            export APP_PORT="${{ vars.APP_PORT || '3000' }}"
+            export AWS_REGION="${{ env.AWS_REGION }}"
+            export SECRET_ID="prod/.env"
+            export ENV_FILE="/tmp/api-election.env"
+
+            docker pull $IMAGE
+            docker stop $CONTAINER_NAME 2>/dev/null || true
+            docker rm $CONTAINER_NAME 2>/dev/null || true
+
+            aws secretsmanager get-secret-value --secret-id "$SECRET_ID" --region "$AWS_REGION" --query SecretString --output text > "$ENV_FILE"
+
+            docker run -d \
+              --name $CONTAINER_NAME \
+              --restart unless-stopped \
+              -p $APP_PORT:3000 \
+              --env-file "$ENV_FILE" \
+              -v "$ENV_FILE:/app/.env:ro" \
+              $IMAGE
+            rm -f "$ENV_FILE"
+            echo "Deployed $IMAGE"
