@@ -5,6 +5,6 @@ import {GetTownVotesSummariesSchema} from '../schemas/get-town-votes-summaries.s
 
 const router = Router();
 
-router.get('/', validate(GetTownVotesSummariesSchema), townVotesSummaryController.getTownVotesSummaries);
+router.get('/', validate(GetTownVotesSummariesSchema), townVotesSummaryController.getTownVotesSummaries as RequestHandler);
 
 export default router;
