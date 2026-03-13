@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write  # 若使用 OIDC 登入 AWS
+      id-token: write
 
     steps:
       - name: Checkout

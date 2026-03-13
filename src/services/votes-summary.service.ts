@@ -37,10 +37,16 @@ const getTownVotesSummaries = async ({
 }: {
   year: number;
   type: 'mayor';
-  countyCode: string;
+  countyCode?: string | undefined;
   candidateLimit?: number | undefined;
 }): Promise<ITownVotesSummary[]> => {
-  const townVotesSummaries = await townVotesSummaryRepository.find({year, type, countyCode});
+  const filter: Partial<ITownVotesSummary> = {year, type};
+
+  if (countyCode !== undefined) {
+    filter.countyCode = countyCode;
+  }
+
+  const townVotesSummaries = await townVotesSummaryRepository.find(filter);
 
   if (candidateLimit) {
     townVotesSummaries.forEach(townVotesSummary => {
