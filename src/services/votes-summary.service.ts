@@ -20,11 +20,11 @@ const getCountyVotesSummaries = async ({
     type,
   });
 
-  if (candidateLimit) {
-    countyVotesSummaries.forEach((countyVotesSummary) => {
-      countyVotesSummary.candidates = countyVotesSummary.candidates.slice(0, candidateLimit);
-    });
-  }
+  countyVotesSummaries.forEach((countyVotesSummary) => {
+    countyVotesSummary.candidates = countyVotesSummary.candidates
+      .sort((a, b) => (b.votes - a.votes) || (a.no - b.no))
+      .slice(0, candidateLimit);
+  });
 
   return countyVotesSummaries.map((doc) => doc.toJSON());
 };
@@ -48,11 +48,11 @@ const getTownVotesSummaries = async ({
 
   const townVotesSummaries = await townVotesSummaryRepository.find(filter);
 
-  if (candidateLimit) {
-    townVotesSummaries.forEach(townVotesSummary => {
-      townVotesSummary.candidates = townVotesSummary.candidates.slice(0, candidateLimit);
-    });
-  }
+  townVotesSummaries.forEach(townVotesSummary => {
+    townVotesSummary.candidates = townVotesSummary.candidates
+      .sort((a, b) => (b.votes - a.votes) || (a.no - b.no))
+      .slice(0, candidateLimit);
+  });
 
   return townVotesSummaries.map((doc) => doc.toJSON());
 };
