@@ -1,4 +1,4 @@
-name: Deploy to AWS EC2
+name: Deploy to AWS
 
 on:
   push:
@@ -14,6 +14,7 @@ env:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: production   # 使用此 Environment 的 variables/secrets；可改為 staging 等
     permissions:
       contents: read
       id-token: write
@@ -56,34 +57,49 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-      - name: Deploy to EC2
-        uses: appleboy/ssh-action@v1.2.5
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME || 'ec2-user' }}
-          key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
-          port: ${{ secrets.EC2_SSH_PORT || 22 }}
-          script: |
-            set -e
-            export IMAGE="${{ steps.build-image.outputs.image }}"
-            export CONTAINER_NAME="api-election"
-            export APP_PORT="${{ vars.APP_PORT || '3000' }}"
-            export AWS_REGION="${{ env.AWS_REGION }}"
-            export SECRET_ID="prod/.env"
-            export ENV_FILE="/tmp/api-election.env"
+      - name: Create new Launch Template version
+        env:
+          LAUNCH_TEMPLATE_NAME: ${{ vars.LAUNCH_TEMPLATE_NAME }}
+          NEW_IMAGE: ${{ steps.build-image.outputs.image }}
+          APP_PORT: ${{ vars.APP_PORT || '3000' }}
+          SECRET_ID: '${{ vars.SECRET_ID }}'
+        run: |
+          CURRENT=$(aws ec2 describe-launch-templates --launch-template-names "$LAUNCH_TEMPLATE_NAME" --query 'LaunchTemplates[0].LatestVersionNumber' --output text)
+          USER_DATA=$(printf '%s' "#!/bin/bash
+          set -e
+          export IMAGE=\"$NEW_IMAGE\"
+          export CONTAINER_NAME=\"api-election\"
+          export APP_PORT=\"$APP_PORT\"
+          export AWS_REGION=\"${{ env.AWS_REGION }}\"
+          export SECRET_ID=\"$SECRET_ID\"
+          export ENV_DIR=\"/opt/api-election\"
+          export ENV_FILE=\"\$ENV_DIR/.env\"
+          mkdir -p \"\$ENV_DIR\"
+          docker pull \$IMAGE
+          docker stop \$CONTAINER_NAME 2>/dev/null || true
+          docker rm \$CONTAINER_NAME 2>/dev/null || true
+          aws secretsmanager get-secret-value --secret-id \"\$SECRET_ID\" --region \"\$AWS_REGION\" --query SecretString --output text > \"\$ENV_FILE\"
+          chmod 600 \"\$ENV_FILE\"
+          docker run -d --name \$CONTAINER_NAME --restart unless-stopped -p \$APP_PORT:3000 --env-file \"\$ENV_FILE\" -v \"\$ENV_FILE:/app/.env:ro\" \$IMAGE
+          ")
+          USER_DATA_B64=$(echo -n "$USER_DATA" | base64 -w0)
+          NEW_VERSION=$(aws ec2 create-launch-template-version \
+            --launch-template-name "$LAUNCH_TEMPLATE_NAME" \
+            --source-version "$CURRENT" \
+            --launch-template-data "{\"UserData\":\"$USER_DATA_B64\"}" \
+            --query 'LaunchTemplateVersion.VersionNumber' --output text)
+          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+          echo "Created Launch Template version: $NEW_VERSION"
+          aws ec2 modify-launch-template \
+            --launch-template-name "$LAUNCH_TEMPLATE_NAME" \
+            --default-version "$NEW_VERSION"
+          echo "Set Launch Template default version to: $NEW_VERSION"
 
-            docker pull $IMAGE
-            docker stop $CONTAINER_NAME 2>/dev/null || true
-            docker rm $CONTAINER_NAME 2>/dev/null || true
-
-            aws secretsmanager get-secret-value --secret-id "$SECRET_ID" --region "$AWS_REGION" --query SecretString --output text > "$ENV_FILE"
-
-            docker run -d \
-              --name $CONTAINER_NAME \
-              --restart unless-stopped \
-              -p $APP_PORT:3000 \
-              --env-file "$ENV_FILE" \
-              -v "$ENV_FILE:/app/.env:ro" \
-              $IMAGE
-            rm -f "$ENV_FILE"
-            echo "Deployed $IMAGE"
+      - name: Start ASG Instances Rolling Update
+        env:
+          ASG_NAME: ${{ vars.ASG_NAME }}
+        run: |
+          aws autoscaling start-instance-refresh \
+            --auto-scaling-group-name "$ASG_NAME" \
+            --preferences '{"MinHealthyPercentage": 50, "InstanceWarmup": 300}'
+          echo "Instance Refresh started. New instances will use the latest Launch Template version."
