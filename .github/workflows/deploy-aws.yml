@@ -105,6 +105,32 @@ jobs:
         env:
           ASG_NAME: ${{ vars.ASG_NAME }}
         run: |
+          IN_PROGRESS=$(aws autoscaling describe-instance-refreshes \
+            --auto-scaling-group-name "$ASG_NAME" \
+            --query "InstanceRefreshes[?Status=='InProgress' || Status=='Pending' || Status=='Cancelling'].InstanceRefreshId" \
+            --output text)
+
+          if [ -n "$IN_PROGRESS" ]; then
+            echo "Found in-progress refresh(es): $IN_PROGRESS — cancelling..."
+            aws autoscaling cancel-instance-refresh --auto-scaling-group-name "$ASG_NAME"
+
+            echo "Waiting for cancellation to complete..."
+            for i in $(seq 1 30); do
+              STATUS=$(aws autoscaling describe-instance-refreshes \
+                --auto-scaling-group-name "$ASG_NAME" \
+                --query "InstanceRefreshes[0].Status" --output text)
+              echo "  status: $STATUS"
+              if [ "$STATUS" = "Cancelled" ] || [ "$STATUS" = "Successful" ] || [ "$STATUS" = "Failed" ]; then
+                break
+              fi
+              if [ "$i" = "30" ]; then
+                echo "Timed out waiting for refresh cancellation"
+                exit 1
+              fi
+              sleep 10
+            done
+          fi
+
           aws autoscaling start-instance-refresh \
             --auto-scaling-group-name "$ASG_NAME" \
             --preferences '{"MinHealthyPercentage": 50, "InstanceWarmup": 60}'
