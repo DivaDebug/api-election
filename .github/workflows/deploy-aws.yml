@@ -107,5 +107,5 @@ jobs:
         run: |
           aws autoscaling start-instance-refresh \
             --auto-scaling-group-name "$ASG_NAME" \
-            --preferences '{"MinHealthyPercentage": 50, "InstanceWarmup": 300}'
+            --preferences '{"MinHealthyPercentage": 50, "InstanceWarmup": 60}'
           echo "Instance Refresh started. New instances will use the latest Launch Template version."
