@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "tsx watch --env-file=.env src/server.ts",
     "build": "tsc && cp -r src/data dist/data",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "docs:dev": "redocly preview-docs docs/openapi.yaml --host 0.0.0.0",
+    "docs:build": "redocly build-docs docs/openapi.yaml -o public/api-doc.html"
   },
   "repository": {
     "type": "git",
