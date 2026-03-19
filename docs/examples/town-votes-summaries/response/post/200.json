@@ -1,0 +1,415 @@
+{
+    "meta": {
+        "errorCode": null
+    },
+    "data": [
+        {
+            "_id": "69b5807010852745d042fd1b",
+            "year": 2022,
+            "type": "mayor",
+            "countyCode": "63000",
+            "townName": "松山區",
+            "townCode": "63000010",
+            "candidates": [
+                {
+                    "no": 6,
+                    "name": "蔣萬安",
+                    "party": "中國國民黨",
+                    "votes": 47295,
+                    "voteShare": 45.51,
+                    "_id": "69b5807010852745d042fd21"
+                },
+                {
+                    "no": 12,
+                    "name": "陳時中",
+                    "party": "民主進步黨",
+                    "votes": 32098,
+                    "voteShare": 30.89,
+                    "_id": "69b5807010852745d042fd27"
+                },
+                {
+                    "no": 8,
+                    "name": "黃珊珊",
+                    "party": "無",
+                    "votes": 23938,
+                    "voteShare": 23.04,
+                    "_id": "69b5807010852745d042fd23"
+                }
+            ]
+        },
+        {
+            "_id": "69b5807010852745d042fd28",
+            "year": 2022,
+            "type": "mayor",
+            "countyCode": "63000",
+            "townName": "信義區",
+            "townCode": "63000020",
+            "candidates": [
+                {
+                    "no": 6,
+                    "name": "蔣萬安",
+                    "party": "中國國民黨",
+                    "votes": 52032,
+                    "voteShare": 45.51,
+                    "_id": "69b5807010852745d042fd2e"
+                },
+                {
+                    "no": 12,
+                    "name": "陳時中",
+                    "party": "民主進步黨",
+                    "votes": 34433,
+                    "voteShare": 30.12,
+                    "_id": "69b5807010852745d042fd34"
+                },
+                {
+                    "no": 8,
+                    "name": "黃珊珊",
+                    "party": "無",
+                    "votes": 27202,
+                    "voteShare": 23.79,
+                    "_id": "69b5807010852745d042fd30"
+                }
+            ]
+        },
+        {
+            "_id": "69b5807010852745d042fd69",
+            "year": 2022,
+            "type": "mayor",
+            "countyCode": "63000",
+            "townName": "大安區",
+            "townCode": "63000030",
+            "candidates": [
+                {
+                    "no": 6,
+                    "name": "蔣萬安",
+                    "party": "中國國民黨",
+                    "votes": 69266,
+                    "voteShare": 46.19,
+                    "_id": "69b5807010852745d042fd6f"
+                },
+                {
+                    "no": 12,
+                    "name": "陳時中",
+                    "party": "民主進步黨",
+                    "votes": 44992,
+                    "voteShare": 30,
+                    "_id": "69b5807010852745d042fd75"
+                },
+                {
+                    "no": 8,
+                    "name": "黃珊珊",
+                    "party": "無",
+                    "votes": 34803,
+                    "voteShare": 23.21,
+                    "_id": "69b5807010852745d042fd71"
+                }
+            ]
+        },
+        {
+            "_id": "69b5807010852745d042fd35",
+            "year": 2022,
+            "type": "mayor",
+            "countyCode": "63000",
+            "townName": "中山區",
+            "townCode": "63000040",
+            "candidates": [
+                {
+                    "no": 6,
+                    "name": "蔣萬安",
+                    "party": "中國國民黨",
+                    "votes": 50224,
+                    "voteShare": 42.78,
+                    "_id": "69b5807010852745d042fd3b"
+                },
+                {
+                    "no": 12,
+                    "name": "陳時中",
+                    "party": "民主進步黨",
+                    "votes": 40233,
+                    "voteShare": 34.27,
+                    "_id": "69b5807010852745d042fd41"
+                },
+                {
+                    "no": 8,
+                    "name": "黃珊珊",
+                    "party": "無",
+                    "votes": 26244,
+                    "voteShare": 22.35,
+                    "_id": "69b5807010852745d042fd3d"
+                }
+            ]
+        },
+        {
+            "_id": "69b5807010852745d042fd4f",
+            "year": 2022,
+            "type": "mayor",
+            "countyCode": "63000",
+            "townName": "中正區",
+            "townCode": "63000050",
+            "candidates": [
+                {
+                    "no": 6,
+                    "name": "蔣萬安",
+                    "party": "中國國民黨",
+                    "votes": 33503,
+                    "voteShare": 43.38,
+                    "_id": "69b5807010852745d042fd55"
+                },
+                {
+                    "no": 12,
+                    "name": "陳時中",
+                    "party": "民主進步黨",
+                    "votes": 23459,
+                    "voteShare": 30.38,
+                    "_id": "69b5807010852745d042fd5b"
+                },
+                {
+                    "no": 8,
+                    "name": "黃珊珊",
+                    "party": "無",
+                    "votes": 19746,
+                    "voteShare": 25.57,
+                    "_id": "69b5807010852745d042fd57"
+                }
+            ]
+        },
+        {
+            "_id": "69b5807010852745d042fd42",
+            "year": 2022,
+            "type": "mayor",
+            "countyCode": "63000",
+            "townName": "大同區",
+            "townCode": "63000060",
+            "candidates": [
+                {
+                    "no": 12,
+                    "name": "陳時中",
+                    "party": "民主進步黨",
+                    "votes": 26530,
+                    "voteShare": 40.28,
+                    "_id": "69b5807010852745d042fd4e"
+                },
+                {
+                    "no": 6,
+                    "name": "蔣萬安",
+                    "party": "中國國民黨",
+                    "votes": 21700,
+                    "voteShare": 32.95,
+                    "_id": "69b5807010852745d042fd48"
+                },
+                {
+                    "no": 8,
+                    "name": "黃珊珊",
+                    "party": "無",
+                    "votes": 17263,
+                    "voteShare": 26.21,
+                    "_id": "69b5807010852745d042fd4a"
+                }
+            ]
+        },
+        {
+            "_id": "69b5807010852745d042fd5c",
+            "year": 2022,
+            "type": "mayor",
+            "countyCode": "63000",
+            "townName": "萬華區",
+            "townCode": "63000070",
+            "candidates": [
+                {
+                    "no": 6,
+                    "name": "蔣萬安",
+                    "party": "中國國民黨",
+                    "votes": 39140,
+                    "voteShare": 39.98,
+                    "_id": "69b5807010852745d042fd62"
+                },
+                {
+                    "no": 12,
+                    "name": "陳時中",
+                    "party": "民主進步黨",
+                    "votes": 33214,
+                    "voteShare": 33.93,
+                    "_id": "69b5807010852745d042fd68"
+                },
+                {
+                    "no": 8,
+                    "name": "黃珊珊",
+                    "party": "無",
+                    "votes": 24849,
+                    "voteShare": 25.38,
+                    "_id": "69b5807010852745d042fd64"
+                }
+            ]
+        },
+        {
+            "_id": "69b5807010852745d042fd76",
+            "year": 2022,
+            "type": "mayor",
+            "countyCode": "63000",
+            "townName": "文山區",
+            "townCode": "63000080",
+            "candidates": [
+                {
+                    "no": 6,
+                    "name": "蔣萬安",
+                    "party": "中國國民黨",
+                    "votes": 69020,
+                    "voteShare": 48.47,
+                    "_id": "69b5807010852745d042fd7c"
+                },
+                {
+                    "no": 12,
+                    "name": "陳時中",
+                    "party": "民主進步黨",
+                    "votes": 36413,
+                    "voteShare": 25.57,
+                    "_id": "69b5807010852745d042fd82"
+                },
+                {
+                    "no": 8,
+                    "name": "黃珊珊",
+                    "party": "無",
+                    "votes": 35893,
+                    "voteShare": 25.2,
+                    "_id": "69b5807010852745d042fd7e"
+                }
+            ]
+        },
+        {
+            "_id": "69b5807010852745d042fd0e",
+            "year": 2022,
+            "type": "mayor",
+            "countyCode": "63000",
+            "townName": "南港區",
+            "townCode": "63000090",
+            "candidates": [
+                {
+                    "no": 6,
+                    "name": "蔣萬安",
+                    "party": "中國國民黨",
+                    "votes": 25261,
+                    "voteShare": 40.37,
+                    "_id": "69b5807010852745d042fd14"
+                },
+                {
+                    "no": 12,
+                    "name": "陳時中",
+                    "party": "民主進步黨",
+                    "votes": 18716,
+                    "voteShare": 29.91,
+                    "_id": "69b5807010852745d042fd1a"
+                },
+                {
+                    "no": 8,
+                    "name": "黃珊珊",
+                    "party": "無",
+                    "votes": 18246,
+                    "voteShare": 29.16,
+                    "_id": "69b5807010852745d042fd16"
+                }
+            ]
+        },
+        {
+            "_id": "69b5807010852745d042fd01",
+            "year": 2022,
+            "type": "mayor",
+            "countyCode": "63000",
+            "townName": "內湖區",
+            "townCode": "63000100",
+            "candidates": [
+                {
+                    "no": 6,
+                    "name": "蔣萬安",
+                    "party": "中國國民黨",
+                    "votes": 60842,
+                    "voteShare": 40.87,
+                    "_id": "69b5807010852745d042fd07"
+                },
+                {
+                    "no": 8,
+                    "name": "黃珊珊",
+                    "party": "無",
+                    "votes": 44466,
+                    "voteShare": 29.87,
+                    "_id": "69b5807010852745d042fd09"
+                },
+                {
+                    "no": 12,
+                    "name": "陳時中",
+                    "party": "民主進步黨",
+                    "votes": 42726,
+                    "voteShare": 28.7,
+                    "_id": "69b5807010852745d042fd0d"
+                }
+            ]
+        },
+        {
+            "_id": "69b5807010852745d042fcf4",
+            "year": 2022,
+            "type": "mayor",
+            "countyCode": "63000",
+            "townName": "士林區",
+            "townCode": "63000110",
+            "candidates": [
+                {
+                    "no": 6,
+                    "name": "蔣萬安",
+                    "party": "中國國民黨",
+                    "votes": 55874,
+                    "voteShare": 37.64,
+                    "_id": "69b5807010852745d042fcfa"
+                },
+                {
+                    "no": 12,
+                    "name": "陳時中",
+                    "party": "民主進步黨",
+                    "votes": 55435,
+                    "voteShare": 37.34,
+                    "_id": "69b5807010852745d042fd00"
+                },
+                {
+                    "no": 8,
+                    "name": "黃珊珊",
+                    "party": "無",
+                    "votes": 35999,
+                    "voteShare": 24.25,
+                    "_id": "69b5807010852745d042fcfc"
+                }
+            ]
+        },
+        {
+            "_id": "69b5807010852745d042fce7",
+            "year": 2022,
+            "type": "mayor",
+            "countyCode": "63000",
+            "townName": "北投區",
+            "townCode": "63000120",
+            "candidates": [
+                {
+                    "no": 6,
+                    "name": "蔣萬安",
+                    "party": "中國國民黨",
+                    "votes": 51433,
+                    "voteShare": 38.95,
+                    "_id": "69b5807010852745d042fced"
+                },
+                {
+                    "no": 12,
+                    "name": "陳時中",
+                    "party": "民主進步黨",
+                    "votes": 46309,
+                    "voteShare": 35.07,
+                    "_id": "69b5807010852745d042fcf3"
+                },
+                {
+                    "no": 8,
+                    "name": "黃珊珊",
+                    "party": "無",
+                    "votes": 33492,
+                    "voteShare": 25.36,
+                    "_id": "69b5807010852745d042fcef"
+                }
+            ]
+        }
+    ]
+}

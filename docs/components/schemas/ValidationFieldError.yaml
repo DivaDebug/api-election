@@ -1,0 +1,11 @@
+type: object
+properties:
+  field:
+    type: string
+    example: body.electoralDistrict.year
+  message:
+    type: string
+    example: Expected number, received string
+required:
+  - field
+  - message

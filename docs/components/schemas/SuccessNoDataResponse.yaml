@@ -1,0 +1,17 @@
+type: object
+properties:
+  meta:
+    type: object
+    properties:
+      errorCode:
+        nullable: true
+        type: string
+        example: null
+    required:
+      - errorCode
+  data:
+    nullable: true
+    example: null
+required:
+  - meta
+  - data

@@ -1,0 +1,38 @@
+get:
+  tags:
+    - Votes Summary
+  summary: Get one county votes summary by id
+  parameters:
+    - name: countyVotesSummaryId
+      in: path
+      required: true
+      schema:
+        type: string
+      example: 69b5807010852745d042fc77
+  responses:
+    '200':
+      description: County votes summary.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                type: object
+                properties:
+                  errorCode:
+                    nullable: true
+                    type: string
+                    example: null
+                required:
+                  - errorCode
+              data:
+                nullable: true
+                $ref: '../components/schemas/CountyVotesSummary.yaml'
+            required:
+              - meta
+              - data
+          examples:
+            '200':
+              value:
+                $ref: '../examples/county-votes-summaries-id/response/get/200.json'

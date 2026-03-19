@@ -1,0 +1,60 @@
+get:
+  tags:
+    - Votes Summary
+  summary: Get county votes summaries
+  parameters:
+    - name: year
+      in: query
+      required: true
+      schema:
+        type: integer
+      example: 2022
+    - name: type
+      in: query
+      required: true
+      schema:
+        type: string
+        enum:
+          - mayor
+      example: mayor
+    - name: countyCode
+      in: query
+      required: false
+      schema:
+        type: string
+      example: 63000
+    - name: candidateLimit
+      in: query
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+      example: 3
+  responses:
+    '200':
+      description: County votes summaries.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                type: object
+                properties:
+                  errorCode:
+                    nullable: true
+                    type: string
+                    example: null
+                required:
+                  - errorCode
+              data:
+                type: array
+                items:
+                  $ref: '../components/schemas/CountyVotesSummary.yaml'
+            required:
+              - meta
+              - data
+          examples:
+            '200':
+              value:
+                $ref: '../examples/county-votes-summaries/response/post/200.json'

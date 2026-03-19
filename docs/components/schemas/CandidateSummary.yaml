@@ -1,0 +1,24 @@
+type: object
+properties:
+  no:
+    type: integer
+    example: 1
+  name:
+    type: string
+    example: Candidate A
+  party:
+    type: string
+    example: Party A
+  votes:
+    type: integer
+    example: 123456
+  voteShare:
+    type: number
+    format: float
+    example: 0.53
+required:
+  - no
+  - name
+  - party
+  - votes
+  - voteShare

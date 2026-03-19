@@ -1,0 +1,56 @@
+post:
+  tags:
+    - "[Admin] Votes"
+  summary: Create a votes
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            electoralDistrict:
+              type: object
+              properties:
+                year:
+                  type: integer
+                  example: 2022
+                type:
+                  type: string
+                  enum:
+                    - mayor
+                  example: mayor
+                townCode:
+                  type: string
+                  example: 63000100
+                candidate:
+                  type: object
+                  properties:
+                    no:
+                      type: integer
+                      example: 1
+                  required:
+                    - no
+              required:
+                - year
+                - type
+                - townCode
+                - candidate
+            votes:
+              type: integer
+              minimum: 0
+              example: 10
+          required:
+            - electoralDistrict
+            - votes
+        examples:
+          '200':
+            value:
+              $ref: '../examples/admin-votes/request/post/200.json'
+  responses:
+    '200':
+      description: Vote created successfully.
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/SuccessNoDataResponse.yaml'

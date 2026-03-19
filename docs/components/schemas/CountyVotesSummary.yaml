@@ -1,0 +1,29 @@
+type: object
+properties:
+  _id:
+    type: string
+    example: 67d9b32559851826b714f96a
+  year:
+    type: integer
+    example: 2024
+  type:
+    type: string
+    enum:
+      - mayor
+  countyName:
+    type: string
+    example: Taipei City
+  countyCode:
+    type: string
+    example: 63000
+  candidates:
+    type: array
+    items:
+      $ref: './CandidateSummary.yaml'
+required:
+  - _id
+  - year
+  - type
+  - countyName
+  - countyCode
+  - candidates

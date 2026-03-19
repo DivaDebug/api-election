@@ -1,0 +1,27 @@
+openapi: 3.0.3
+info:
+  title: API Election
+  version: 1.0.0
+  description: Election APIs
+servers:
+  - url: https://api.election.localhost
+    description: local server
+  - url: https://api-election.divadebug.com
+    description: production server
+paths:
+  /admin/votes:
+    $ref: './paths/admin-votes.yaml'
+  /county-votes-summaries:
+    $ref: './paths/county-votes-summaries.yaml'
+  /county-votes-summaries/{countyVotesSummaryId}:
+    $ref: './paths/county-votes-summaries-id.yaml'
+  /town-votes-summaries:
+    $ref: './paths/town-votes-summaries.yaml'
+components:
+  schemas:
+    SuccessNoDataResponse:
+      $ref: './components/schemas/SuccessNoDataResponse.yaml'
+    CandidateSummary:
+      $ref: './components/schemas/CandidateSummary.yaml'
+    CountyVotesSummary:
+      $ref: './components/schemas/CountyVotesSummary.yaml'

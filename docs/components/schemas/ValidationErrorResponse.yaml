@@ -1,0 +1,13 @@
+allOf:
+  - $ref: './ErrorResponse.yaml'
+  - type: object
+    properties:
+      meta:
+        type: object
+        properties:
+          errorCode:
+            type: string
+            enum:
+              - VALIDATION_ERROR
+        required:
+          - errorCode

@@ -1,0 +1,11 @@
+{
+    "electoralDistrict": {
+        "year": 2022,
+        "type": "mayor",
+        "townCode": "63000100",
+        "candidate": {
+            "no": 6
+        }
+    },
+    "votes": 10
+}

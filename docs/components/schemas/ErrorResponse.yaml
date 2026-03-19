@@ -1,0 +1,9 @@
+type: object
+properties:
+  meta:
+    $ref: './MetaError.yaml'
+  error:
+    $ref: './ErrorBody.yaml'
+required:
+  - meta
+  - error

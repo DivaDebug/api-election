@@ -1,0 +1,110 @@
+{
+    "meta": {
+        "errorCode": null
+    },
+    "data": {
+        "_id": "69b5807010852745d042fc77",
+        "year": 2022,
+        "type": "mayor",
+        "countyName": "臺北市",
+        "countyCode": "63000",
+        "candidates": [
+            {
+                "no": 1,
+                "name": "張家豪",
+                "party": "台灣動物保護黨",
+                "votes": 2367,
+                "voteShare": 0.17,
+                "_id": "69b5807010852745d042fc78"
+            },
+            {
+                "no": 2,
+                "name": "王文娟",
+                "party": "無",
+                "votes": 451,
+                "voteShare": 0.03,
+                "_id": "69b5807010852745d042fc79"
+            },
+            {
+                "no": 3,
+                "name": "鄭匡宇",
+                "party": "無",
+                "votes": 386,
+                "voteShare": 0.03,
+                "_id": "69b5807010852745d042fc7a"
+            },
+            {
+                "no": 4,
+                "name": "黃聖峰",
+                "party": "台澎黨",
+                "votes": 256,
+                "voteShare": 0.02,
+                "_id": "69b5807010852745d042fc7b"
+            },
+            {
+                "no": 5,
+                "name": "童文薰",
+                "party": "無",
+                "votes": 2425,
+                "voteShare": 0.18,
+                "_id": "69b5807010852745d042fc7c"
+            },
+            {
+                "no": 6,
+                "name": "蔣萬安",
+                "party": "中國國民黨",
+                "votes": 575590,
+                "voteShare": 42.29,
+                "_id": "69b5807010852745d042fc7d"
+            },
+            {
+                "no": 7,
+                "name": "蘇煥智",
+                "party": "台灣維新",
+                "votes": 1851,
+                "voteShare": 0.14,
+                "_id": "69b5807010852745d042fc7e"
+            },
+            {
+                "no": 8,
+                "name": "黃珊珊",
+                "party": "無",
+                "votes": 342141,
+                "voteShare": 25.14,
+                "_id": "69b5807010852745d042fc7f"
+            },
+            {
+                "no": 9,
+                "name": "施奉先",
+                "party": "無",
+                "votes": 383,
+                "voteShare": 0.03,
+                "_id": "69b5807010852745d042fc80"
+            },
+            {
+                "no": 10,
+                "name": "唐新民",
+                "party": "共和黨",
+                "votes": 316,
+                "voteShare": 0.02,
+                "_id": "69b5807010852745d042fc81"
+            },
+            {
+                "no": 11,
+                "name": "謝立康",
+                "party": "無",
+                "votes": 227,
+                "voteShare": 0.02,
+                "_id": "69b5807010852745d042fc82"
+            },
+            {
+                "no": 12,
+                "name": "陳時中",
+                "party": "民主進步黨",
+                "votes": 434558,
+                "voteShare": 31.93,
+                "_id": "69b5807010852745d042fc83"
+            }
+        ]
+    }
+}

@@ -1,0 +1,7 @@
+type: object
+properties:
+  errorCode:
+    type: string
+    example: VALIDATION_ERROR
+required:
+  - errorCode
