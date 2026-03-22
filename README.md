@@ -6,6 +6,10 @@
 
 此專案為選舉開票 RESTful API 服務，提供縣市與鄉鎮投票統計資料的查詢介面，並包含管理員寫入票數的端點。以 Node.js（TypeScript）搭配 Express 框架開發，使用 MongoDB 作為資料儲存，並整合 OpenAPI 規格文件。部署採用 Docker 容器化，透過 GitHub Actions CI/CD 自動建置並推送至 AWS ECR，再由 Auto Scaling Group 滾動更新上線。
 
+## Demo
+
+縣市長選舉開票地圖：https://fionasgithub.github.io/react-tw-elections-dashboard/
+
 ## Tech Stack
 
 - Node.js (TypeScript)
