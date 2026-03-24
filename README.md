@@ -10,6 +10,10 @@
 
 縣市長選舉開票地圖：https://fionasgithub.github.io/react-tw-elections-dashboard/
 
+## AWS Infrastructure Architecture
+
+https://www.figma.com/board/NAXg3c4T6twreWoLjD0tuk/api-election-AWS-Cloud-Infrastructure-Architecture
+
 ## Tech Stack
 
 - Node.js (TypeScript)
