@@ -1,0 +1,32 @@
+# Compile TypeScript and install dependencies
+FROM node:24.13.1-alpine AS builder
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm ci
+
+COPY tsconfig.json ./
+COPY src ./src
+RUN npm run build
+
+# Production stage - use regular node image (Lambda Web Adapter handles Lambda integration)
+FROM node:24.13.1-alpine
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV AWS_LWA_PORT=3000
+ENV AWS_LAMBDA_EXEC_WRAPPER=/opt/bootstrap
+
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+
+COPY --from=builder /app/dist ./dist
+COPY public ./public
+
+# Lambda Web Adapter
+COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.8.4 /lambda-adapter /opt/extensions/lambda-adapter
+
+CMD [ "node", "dist/server.js" ]
